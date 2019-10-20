@@ -38,7 +38,7 @@ tar -tf update.tar
   # Insert the solution commands for Exercise 3 below
 tar -f update.tar --delete test1.txt
 tar -tf update.tar
-```
+   ```
 
 #### Incremental Backups
 - **Exercise 1**
