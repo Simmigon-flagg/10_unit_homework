@@ -46,9 +46,20 @@ tar -tf update.tar
 
 - **Exercise 2**
 
-  ```bash
+```bash
   # Insert the solution commands for Exercise 2 below
-  ```
+tar --create --file=archive.1.tar --listed-incremental=/var/log/home.snar --level=0 /home/student
+
+touch ~/new_file.1 ~/new_file.2
+
+tar --list-incremental=/var/log/home.snar --level=1 /home/student
+cp -a /var/log/home.snar /var/log/home.snar-1
+
+tar tf /var/log/home/snar
+
+Yes, I see my expected outcome
+
+```
 
 ### Cron
 #### Managing cron
