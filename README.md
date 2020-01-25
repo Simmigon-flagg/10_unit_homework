@@ -62,9 +62,12 @@ Yes, I see my expected outcome
 ```
 
 ### Cron
-#### Managing cron
-Please paste the contents of `backup-cron-jobs.txt` in the space below.
-
-  ```bash
-  # Paste the contents of `backup-cron-jobs.txt` below
-  ```
+    #Part 1
+        */2 * * * * echo "Complete" >> snan.txt >/dev/null 2>&1
+        * 17 * * * tar -cvzf document-backup.tar.gz ~/Documents >/dev/null 2>&1
+        * 17 * * 5 tar -cvjf pictures-backup.tar.bz2 ~/Pictures >/dev/null 2>&1
+    #Part 2
+        (cd ~/data/cron/Documents && tar cvf ~/data/cron/cronjob.tar $(find . -type f -iname "*.txt"))
+        mkdir -p ~/data/cron/exercises && tar xvf ~/data/cron/cronjob.tar -C ~/data/cron/exercises
+    Part 4: Disable and Backup
+        */2 * * * TUE,THU,SAT (cd ~/data/cron/Documents && tar cvf ~/data/cron/cronjob.tar $(find . -type f -iname "*.txt")) && mkdir -p ~/data/cron/exercises && tar xvf ~/data/cron/cronjob.tar -C ~/data/cron/exercises >/dev/null 2>&1
